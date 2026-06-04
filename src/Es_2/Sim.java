@@ -5,22 +5,26 @@ import java.util.Arrays;
 public class Sim {
 
     // ATTRIBUTI
-    private String numTel;
-    private double credito;
+    private final String numTel;
+    private final double credito;
     private Chiamata[] listaChiamate;
 
     // COSTRUTTORI
-    public Sim(String numTel) {
+    public Sim(String numTel, Chiamata[] calls) {
         this.numTel = numTel;
         this.credito = 0;
-        this.listaChiamate = new Chiamata[5];
+        this.listaChiamate = calls;
     }
 
     // METODI di ISTANZA
     public void printSim() {
         System.out.println("CREDITO RESIDUO: " + this.credito);
         System.out.println("NUMERO DI TELEFONO:" + this.numTel);
-        System.out.println("ULTIME 5 CHIAMATE" + Arrays.toString(this.listaChiamate));
+        for (Chiamata chiamata : listaChiamate) {
+            if (chiamata != null)
+                System.out.println("ULTIME CHIAMATE: ");
+            System.out.println(chiamata);
+        }
     }
 
     public void setChiamate(Chiamata[] chiamate) {
