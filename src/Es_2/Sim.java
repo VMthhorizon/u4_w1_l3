@@ -5,12 +5,12 @@ import java.util.Arrays;
 public class Sim {
 
     // ATTRIBUTI
-    private int numTel;
+    private String numTel;
     private double credito;
     private Chiamata[] listaChiamate;
 
     // COSTRUTTORI
-    public Sim(int numTel) {
+    public Sim(String numTel) {
         this.numTel = numTel;
         this.credito = 0;
         this.listaChiamate = new Chiamata[5];
